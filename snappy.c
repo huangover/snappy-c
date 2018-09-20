@@ -1610,10 +1610,6 @@ EXPORT_SYMBOL(snappy_init_env);
 void snappy_free_env(struct snappy_env *env)
 {
 	vfree(env->hash_table);
-#ifdef SG
-	vfree(env->scratch);
-	vfree(env->scratch_output);
-#endif
 	clear_env(env);
 }
 EXPORT_SYMBOL(snappy_free_env);
